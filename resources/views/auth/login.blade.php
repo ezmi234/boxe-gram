@@ -12,10 +12,11 @@
 
     <title>FoodNation</title>
 </head>
-<body class="font-[Poppins] bg-gray-200 h-screen">
+<body class="bg-gray-200 h-screen">
     <div id="app">
         <!-- Header -->
-        <header class="bg-white">
+        <header class="static bg-white">
+            <div>
             <nav class="flex justify-between items-center w-[92%]  mx-auto">
                 <div>
                     <img class="w-24 cursor-pointer" src="{{URL('img/logo.svg')}}" alt="logo">
@@ -41,22 +42,23 @@
                     </ul>
                 </div>
                 <div class="flex items-center gap-6">
-                    <button class="bg-orange-400 text-white px-5 py-2 rounded-full hover:bg-orange-600">Sign in</button>
+                    <button class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-700">Sign in</button>
                     <img onclick="onToggleMenu(this)" class="w-12 cursor-pointer md:hidden" name="menu"  src="{{URL('img/menu-outline.svg')}}" alt="menu-icon">
                 </div>
             </nav>
+            </div>
         </header>
             <!-- component -->
             <!-- Container -->
-        <div class="flex flex-wrap max-h-screen w-full content-center justify-center bg-gray-200 py-10">
+        <div class="flex flex-wrap mt-8 md:mt-32 w-full content-center justify-center bg-gray-200 py-10">
             <!-- Login component -->
             <div class="flex shadow-md">
                 <!-- Login form -->
                 <div class="flex flex-wrap content-center justify-center rounded-l-md bg-white" style="width: 24rem; height: 32rem;">
                 <div class="w-72">
                     <!-- Heading -->
-                    <h1 class="text-xl font-semibold text-orange-500">FoodNation</h1>
-                    <small class="text-orange-300">Share and see recipes from all over the world.</small>
+                    <h1 class="text-xl font-semibold text-blue-500">BoxeGram</h1>
+                    <small class="text-blue-400">The tinder of the boxe</small>
                     <!-- Form -->
                     <form method="POST" action="login" class="mt-4">
                         @csrf
@@ -66,8 +68,8 @@
                         </span>
                         @endif
                         <div class="mb-3">
-                            <label for="email" class="mb-2 block text-xs font-semibold">Email</label>
-                            <input id="email" name="email" type="email" placeholder="Enter your email" autofocus class="block w-full rounded-md border border-gray-300 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 py-1 px-1.5 text-gray-500" />
+                            <label for="email" class="mb-2 block text-xs font-semibold">Email or Username</label>
+                            <input id="email" name="email" type="email" placeholder="Enter your email or username" autofocus class="block w-full rounded-md border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 py-1 px-1.5 text-gray-500" />
                             @if ($errors->has('email'))
                                 <span class="text-red-500 text-xs">{{ $errors->first('email') }}</span>
                             @endif
@@ -75,25 +77,25 @@
 
                         <div class="mb-3">
                             <label for="password" class="mb-2 block text-xs font-semibold">Password</label>
-                            <input id="password" name="password" type="password" placeholder="*****" class="block w-full rounded-md border border-gray-300 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 py-1 px-1.5 text-gray-500" />
+                            <input id="password" name="password" type="password" placeholder="*****" class="block w-full rounded-md border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 py-1 px-1.5 text-gray-500" />
                             @if ($errors->has('password'))
                                 <span class="text-red-500 text-xs">{{ $errors->first('password') }}</span>
                             @endif
                         </div>
 
                         <div class="mb-3 flex flex-wrap content-center">
-                            <a href="#" class="text-xs font-semibold text-orange-500">Forgot password?</a>
+                            <a href="#" class="text-xs font-semibold text-blue-400 hover:text-blue-600">Forgot password?</a>
                         </div>
 
                         <div class="mb-3">
-                            <button type="submit" class="mb-1.5 block w-full text-center text-white bg-orange-500 hover:bg-orange-700 px-2 py-1.5 rounded-md">Sign in</button>
+                            <button type="submit" class="mb-1.5 block w-full text-center text-white bg-blue-500 hover:bg-blue-700 px-2 py-1.5 rounded-md">Sign in</button>
                         </div>
                     </form>
 
                     <!-- Footer -->
                     <div class="text-center">
                     <span class="text-xs text-gray-400 font-semibold">Don't have account?</span>
-                    <a href="{{ route('register') }}"  class=" text-xs font-semibold text-orange-500">Sign up</a>
+                    <a href="{{ route('register') }}"  class=" text-xs font-semibold text-blue-400 hover:text-blue-600">Sign up</a>
                     </div>
               </div>
               </div>

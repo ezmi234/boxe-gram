@@ -9,7 +9,7 @@
         <header class="bg-white">
             <nav class="flex justify-between items-center w-[92%]  mx-auto">
                 <div>
-                    <img class="w-24 cursor-pointer" src="{{URL('img/logo.svg')}}" alt="logo">
+                    <img class="w-28 cursor-pointer" src="{{URL('img/logo.svg')}}" alt="logo">
                 </div>
                 <div
                     class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex items-center px-5">
@@ -27,7 +27,7 @@
                             <a class="hover:text-gray-600" href="#">Developers</a>
                         </li>
                         <li>
-                            <a class="hover:text-gray-600" href="#">Pricing</a>
+                            <a class="hover:text-gray-600" href="{{ route('profile.show',($name = Auth::user()->name))}}">Profile</a>
                         </li>
                     </ul>
                 </div>
@@ -39,6 +39,18 @@
                     <img onclick="onToggleMenu(this)" class="w-12 cursor-pointer md:hidden" name="menu"  src="{{URL('img/menu-outline.svg')}}" alt="menu-icon">
                 </div>
             </nav>
+        <script>
+            const navLinks = document.querySelector('.nav-links');
+            function onToggleMenu(e){
+                e.name = e.name === 'menu' ? 'close' : 'menu'
+                e.src = `{{URL('img/${e.name}-outline.svg')}}`
+                navLinks.classList.toggle('top-[9%]')
+            }
+        </script>
+
         </header>
+        <h1>
+            {{Auth::user()->name}}
+        </h1>
     </div>
 @endsection

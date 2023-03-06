@@ -1,13 +1,15 @@
 <header class="bg-white ">
     <nav class="flex justify-between items-center w-[92%]  mx-auto">
         <div>
-            <img class="w-24 cursor-pointer" src="{{URL('img/logo.svg')}}" alt="logo">
+            <a href="/">
+                <img class="w-24 cursor-pointer" src="{{URL('img/logo.svg')}}" alt="logo">
+            </a>
         </div>
         <div
             class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex items-center px-5">
             <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
                 <li>
-                    <a class="hover:text-gray-600" href="#">Products</a>
+                    <a class="hover:text-gray-600" href="{{ route('dashboard') }}">Home</a>
                 </li>
                 <li>
                     <a class="hover:text-gray-600" href="#">Solution</a>

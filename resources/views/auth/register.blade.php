@@ -34,60 +34,66 @@
                     </ul>
                 </div>
                 <div class="flex items-center gap-6">
-                    <button class="bg-orange-400 text-white px-5 py-2 rounded-full hover:bg-orange-600">Sign in</button>
+                    <button class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-700">Sign in</button>
                     <img onclick="onToggleMenu(this)" class="w-12 cursor-pointer md:hidden" name="menu"  src="{{URL('img/menu-outline.svg')}}" alt="menu-icon">
                 </div>
             </nav>
         </header>
             <!-- component -->
             <!-- Container -->
-        <div class="flex flex-wrap max-h-screen w-full content-center justify-center bg-gray-200 py-10">
+
+        <div class="flex flex-wrap mt-8 md:mt-32 w-full content-center justify-center bg-gray-200 py-10">
             <!-- Login component -->
             <div class="flex shadow-md">
                 <!-- Login form -->
                 <div class="flex flex-wrap content-center justify-center rounded-l-md bg-white" style="width: 24rem; height: 32rem;">
                 <div class="w-72">
                     <!-- Heading -->
-                    <h1 class="text-xl font-semibold text-orange-500">FoodNation</h1>
-                    <h2 class="text-xl font-semibold text-orange-500">Register</h2>
-                    <small class="text-orange-300">Sign Up to see recipes from all over the world</small>
-
+                    <h1 class="text-xl font-semibold text-blue-500">Register</h1>
                     <!-- Form -->
                     <form method="POST" action="register" class="mt-4">
                     @csrf
-                    @if(\Session::has('message'))
-                    <span class="text-red-500 text-xs">
-                        {{\Session::get('message')}}
-                    </span>
-                    @endif
                     <div class="mb-3">
                         <label class="mb-2 block text-xs font-semibold">Full Name</label>
-                        <input id="fullname" name="name" type="text" required autofocus placeholder="Full Name" class="block w-full rounded-md border border-gray-300 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 py-1 px-1.5 text-gray-500" />
+                        <input id="fullname" name="name" type="text" required autofocus placeholder="Full Name" class="block w-full rounded-md border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 py-1 px-1.5 text-gray-500" />
                     </div>
 
                     <div class="mb-3">
                         <label class="mb-2 block text-xs font-semibold">Email</label>
-                        <input id="email" name="email" type="email" required placeholder="Enter your email" class="block w-full rounded-md border border-gray-300 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 py-1 px-1.5 text-gray-500" />
+                        <input id="email" name="email" type="email" required placeholder="Enter your email" class="block w-full rounded-md border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 py-1 px-1.5 text-gray-500" />
                     </div>
 
                     <div class="mb-3">
                         <label for="password" class="mb-2 block text-xs font-semibold">Password</label>
-                        <input id="password" name="password" type="password" required placeholder="*****" class="block w-full rounded-md border border-gray-300 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 py-1 px-1.5 text-gray-500" />
+                        <input id="password" name="password" type="password" required placeholder="*****" class="block w-full rounded-md border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 py-1 px-1.5 text-gray-500" />
                     </div>
 
                     <div class="mb-3">
                         <label for="password_confirmation" class="mb-2 block text-xs font-semibold">Confirm Password</label>
-                        <input id="password_confirmation" name="password_confirmation" type="password" required placeholder="*****" class="block w-full rounded-md border border-gray-300 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 py-1 px-1.5 text-gray-500" />
+                        <input id="password_confirmation" name="password_confirmation" type="password" required placeholder="*****" class="block w-full rounded-md border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 py-1 px-1.5 text-gray-500" />
                     </div>
 
+                    @props(['errors'])
+
+                    @if ($errors->any())
+                        <div class="text-red-500 text-xs">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                    @endif
+
                     <div class="mb-3">
-                        <button type="submit" class="mb-1.5 block w-full text-center text-white bg-orange-500 hover:bg-orange-700px-2 py-1.5 rounded-md">Sign Up</button>
+                        <button type="submit" class="mb-1.5 block w-full text-center text-white bg-blue-500 hover:bg-blue-700px-2 py-1.5 rounded-md">Sign Up</button>
                     </div>
                     </form>
                     <!-- Footer -->
                     <div class="text-center">
                         <span class="text-xs text-gray-400 font-semibold">Do you already have an accout?</span>
-                        <a href="/"  class=" text-xs font-semibold text-orange-500">Login</a>
+                        <a href="/login"  class=" text-xs font-semibold text-blue-400 hover:text-blue-600">Login</a>
                     </div>
               </div>
               </div>

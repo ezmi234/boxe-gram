@@ -24,7 +24,9 @@
             </ul>
         </div>
         <div class="flex items-center gap-6">
-            <button class="bg-orange-400 text-white px-5 py-2 rounded-full hover:bg-orange-600">Sign in</button>
+            <a href="{{ route('login') }}" class="px-5 py-2 text-white no-underline bg-orange-400 rounded-full hover:bg-orange-600 hover:underline hover:text-blue-200">
+                Sign In
+            </a>
             <img onclick="onToggleMenu(this)" class="w-12 cursor-pointer md:hidden" name="menu"  src="{{URL('img/menu-outline.svg')}}" alt="menu-icon">
 
         </div>

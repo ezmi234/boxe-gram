@@ -53,7 +53,7 @@
                     <small class="text-orange-300">Sign Up to see recipes from all over the world</small>
 
                     <!-- Form -->
-                    <form method="POST" action="" class="mt-4">
+                    <form method="POST" action="register" class="mt-4">
                     @csrf
                     @if(\Session::has('message'))
                     <span class="text-red-500 text-xs">
@@ -62,7 +62,7 @@
                     @endif
                     <div class="mb-3">
                         <label class="mb-2 block text-xs font-semibold">Full Name</label>
-                        <input id="fullname" name="fullname" type="text" required autofocus placeholder="Full Name" class="block w-full rounded-md border border-gray-300 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 py-1 px-1.5 text-gray-500" />
+                        <input id="fullname" name="name" type="text" required autofocus placeholder="Full Name" class="block w-full rounded-md border border-gray-300 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 py-1 px-1.5 text-gray-500" />
                     </div>
 
                     <div class="mb-3">

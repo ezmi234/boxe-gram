@@ -9,7 +9,7 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
-    
+
     <title>FoodNation</title>
 </head>
 <body class="font-[Poppins] bg-gray-200 h-screen">
@@ -58,7 +58,7 @@
                     <h1 class="text-xl font-semibold text-orange-500">FoodNation</h1>
                     <small class="text-orange-300">Share and see recipes from all over the world.</small>
                     <!-- Form -->
-                    <form method="POST" action="" class="mt-4">
+                    <form method="POST" action="login" class="mt-4">
                         @csrf
                         @if(\Session::has('message'))
                         <span class="text-red-500 text-xs">
@@ -93,7 +93,7 @@
                     <!-- Footer -->
                     <div class="text-center">
                     <span class="text-xs text-gray-400 font-semibold">Don't have account?</span>
-                    <a href=""  class=" text-xs font-semibold text-orange-500">Sign up</a>
+                    <a href="{{ route('register') }}"  class=" text-xs font-semibold text-orange-500">Sign up</a>
                     </div>
               </div>
               </div>
@@ -110,7 +110,7 @@
 
 
     <!-- component-->
-                        
+
     @vite('resources/js/app.js')
 </body>
 </html>

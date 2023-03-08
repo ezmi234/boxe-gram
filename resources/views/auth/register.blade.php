@@ -42,11 +42,11 @@
             <!-- component -->
             <!-- Container -->
 
-        <div class="flex flex-wrap mt-8 md:mt-32 w-full content-center justify-center bg-gray-200 py-10">
+        <div class="flex flex-wrap mt-2 md:mt-32 w-full content-center justify-center bg-gray-200 py-10">
             <!-- Login component -->
             <div class="flex shadow-md">
                 <!-- Login form -->
-                <div class="flex flex-wrap content-center justify-center rounded-l-md bg-white" style="width: 24rem; height: 32rem;">
+                <div class="flex flex-wrap content-center justify-center rounded-l-md bg-white" style="width: 24rem; height: 34rem;">
                 <div class="w-72">
                     <!-- Heading -->
                     <h1 class="text-xl font-semibold text-blue-500">Register</h1>
@@ -56,6 +56,11 @@
                     <div class="mb-3">
                         <label class="mb-2 block text-xs font-semibold">Full Name</label>
                         <input id="fullname" name="name" type="text" required autofocus placeholder="Full Name" class="block w-full rounded-md border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 py-1 px-1.5 text-gray-500" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="mb-2 block text-xs font-semibold">Username</label>
+                        <input id="username" name="username" type="username" required placeholder="Enter your username" class="block w-full rounded-md border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 py-1 px-1.5 text-gray-500" />
                     </div>
 
                     <div class="mb-3">
@@ -98,7 +103,7 @@
               </div>
               </div>
               <!-- Login banner -->
-              <div class="invisible md:visible md:static absolute flex flex-wrap content-center justify-center rounded-r-md" style="width: 24rem; height: 32rem;">
+              <div class="invisible md:visible md:static absolute flex flex-wrap content-center justify-center rounded-r-md" style="width: 24rem; height: 34rem;">
                 <img alt="image for showing an example homepage of this social network" class="w-full h-full bg-center bg-no-repeat bg-cover rounded-r-md" src="https://i.imgur.com/9l1A4OS.jpeg">
               </div>
 
